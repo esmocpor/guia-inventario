@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Guía Inventario">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0f151e">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAI2klEQVR4Xu3cWWxUVRgH8DOd6UJX2mkRaAsCKkoFoSxlEUWjgAtLwSc1MRofNDFoIOiLia9qMEFjTExMNOKLsS0W1BptFQ0tBVsBiywqSCl0oZ1Ol+k2nemYoUqq7T3f+e69p8Q7/9/z7Z3pvd/8z5lzvjuu/KcOC4CJxOGygBEUB6A4gA/JAUgO4ENyAJID+JAcgOQAPiQHIDmAD8kBSA7gQ3IAkgP4kByA5AA+JAcgOYAPyQFIDuBDcgCSA/iQHIDkAD4kByA5gA/JAUgO4ENyAJID+JAcgOQAPiQHIDmAD8kBSA7gQ3IAkgP4kByA5AA+JAcgOYAPyQFIDuBDcgCSA/iQHIDkAD4kByA5gA/JAUgO4ENyAJID+JAcgOQAPiQHIDmAD8kBSA7gQ3IAkgP4kBxgyKP72uRlJ9bsWSZ/lY6e4cIdxyTHqJxk1IeVLa99coH1T+3bVXDvwqmSP/nm585n3znznwN2Fs96aUu+/IU+rmp5dR/vzUwoM9VT//YKj9sleblgaKRwx089/SH5W2JxWnI8uW56XnYi6xKYU1p9lfzDR1dky++oIpXzfHu8097KEMJxxRHvce3cOkvxolvReHWw/o9e+Rmy0uLvuVOWSYqKV+WQR5ZUt5PHcDktOYQQ29ZMu3VmMvdCmFCiEB7bVk8zceax8rITl96SLj+Jr2f4hwa//BgTHFgccS6xe/tkhMfBox3B0Ij8oj+4JCslyW3ixly3dVWOSzbZiCqvbQ+FI1ZeZUIOLA4hxMal3rvmpNp+sf6jpz9UeZz4vE5JiNtQ6LXyTm7UmOLAOcd1rzw228otUaQ2stAzBiMFs1LIIfK3K/2nGgOKb5jFmckhhLi7YOrqOzJY18KEQw1+X8+w/A/XLMjITo83cXIhomMK+Yclh+nvTeY4tjiEmIzwCIUj5bXE1wR3nGvzSvoejxfnEluoPxyJiP1H7P+eMsrJxbFkXtr6wixzHxp1Kt8htykEwHgrb8+YnpkgfyeHf+1q6wqqv1sWJxeHEOLl7bPjqKm+RacaA+cu98tPsmhO6tzpU7gvVKwwWVFZizPN4cVxW27y1lVWVxpIZTX0qK8yexgrwRP38LJs+UsHBsNf1/vkx1jh8OIQQuwqzrdlDVuirKZ9hFplUPlGOtYDizPTphALJBV1voEgsdBihfOLIz8n6fF1061cI1JbV7D6dJf8sNnTkgrnpZGnuk4labSOKY6akIaNP7wvbs6bkqD3Y6Byn1Tu96j0ZM/9d2XKK+mKb+jI2W75MRbpvWSTSbIelZOR8PSDM7W+mYo6X2AwLH+JTUWqm7SPLPcmeIhbU1bTHqHGMoucUxxf/eSTLBQ+/3BuerLG5pWB4EhFHTE39KbF31OgtEmrkjEqWWWRc4ojEhFvllwyuhwZKZ7nHsq1eLHkVO7WVoVvpzOyEormE2u7x8/3Xmgd0PrvOGrOIUR0MfvouR6jS/bM+hmml7FVHDnbfcU3JD9yQ6GX3KTdUpRDrs2U1uhaFR3LOckx6vXPLhrdnuRE947NRGOfFZGI2E/ds2ubtMSiLZkuw6HIAWrN3hZOK476P3qrTnQaXZonNDcRKo0s0qX023KTF+SnyG9t1cnOrj47e0WNOK04hBBvll4ymsbHe1y7ijX2AZ1vHThxgdg9X1swVTK6bVOYlJRq6AickAOL40xT34GjhkNy8Wq9TYRkeLjjXJuKJl4Xdylsw/oDoaqThtFoLwcWhxDirf2XjNrmdDcRlte2D4eI9Ydig+2e5bem53qJ1nlNHYGxkhxCiIttg5/+2Gb0Mdq41Lt4rq4mwq4++pO9eG7qnJsm2KRV2X8hk8lGzkwOIcTe8qahYcNNKa1NhCpzgvHTUo/b9cgKYhv2fMvAyT+1dATGUHIIEd0M+6iyxehjtGaBxibCqpOd/gDxbWJ8SNy3KHNqCrGGq9KyaiPHJocQ4r0vLwcGDPc79IVHKByRzIhH3XxT0pJ/b9KSY0q0I5BaR7GXk4vDHwi9X3HF6HotmZdm8aEBCZWZwdiRJTXJ/cBiYnGs9mx3cyexAmsvJxeHEOKDb5p9vYbd4bu3zyIXqs05cSFwvoXY+9g85knajcu8SVRTwSSPKU7bWxmvbzD87sHLRjdYaxNhKdU76E2PX/vPJi3Zgdw/FCZ3fW3n8OQQQuz7rlWyH7arOD/eo6UFuaya7h0cHVlyMhJWUY/YfF3v66P6RWzn/OIIhkb2ft5kdOHyc5KK5hOPKZvT3DlUS3VqbSjMSk50b1mZ7aaGN5UHIGzn/OIQIjpaS2YA5I0xjZwlJCe6NxRmkd9TWv3BGqpHVYeYKI7wSGRPmWEfkD4Vdb7+IaJ38IVNeQtvJpZr99dcJbvbdYiJ4hBCfFXXoelpY4m+6HMlxCYZ+Zz0teSbjNae8WKlOCIR8UZJo46Pl5zKgodcw8XA783EE3WaxEpxCCF+aOgiZ4i2qz7d1eq39CwrOXHRJ4aKQ4gbEB4Wn4KPrsTXdui7/XKxVRzyJkJNrPx+xve/+CUrvLrFVnHImwg1+b25v+GiyX1261MWK2KuOM409ZUbNxFqYm7e0N0Xqjxh/28Eqou54og2EZYZNhFqcqC2w8Sv/R08Rv9aoVaxWByNV2VNhDr4eocP8X8n9MaOKc7flTWyt7xpUOcvW4zHHVn+bBsgfyFZt1hMjr+bCKsMmwh1qDzu7+Y8iVR2g1ZFx4rR4og2EX5xude4idB2wdDIwWOqKxaRCN0OMglc+U8dnoSXgf+j2E0OIKE4wBCKA1AcwIfkACQH8CE5AMkBfEgOQHIAH5IDkBzAh+QAJAfwITkAyQF8SA5AcgAfkgOQHMCH5AAkB/AhOQDJAXxIDkByAB+SA5AcwIfkACQH8CE5AMkBfEgOQHIAH5IDkBzAh+QAJAfwITkAyQF8SA5AcgAfkgOQHMCH5AAkB/AhOQDJAXxIDkByAB+SA5AcwIfkACQH8CE5AMkBfEgOQHIAH5IDkBzAh+QAJAfwITkAyQF8SA5AcgAfkgMM/QUyA4OTNU0R8AAAAABJRU5ErkJggg==">
+<title>Guía Inventario SAP</title>
+<style>html{color-scheme:light dark}body{margin:0}body{padding-top:calc(20px + env(safe-area-inset-top,0px))!important}[hidden]{display:none!important}</style>
+</head>
+<body>
+<style>
+/* Concepto: guía de bolsillo de una columna. Barra de pestañas abajo para usarla con una mano. Los códigos SAP van en mono porque son el vocabulario del oficio. */
+:root {
+  --bg: #f3f5f8; --surface: #ffffff; --ink: #17202e; --muted: #5b6678; --line: #d9dfe8;
+  --accent: #1d5fc4; --accent-ink: #ffffff; --accent-soft: #e3edfb;
+  --key: #fff1b8; --key-ink: #4a3b00;
+  --ok: #17795a; --ok-soft: #dcf3ea; --bad: #b4332f; --bad-soft: #fbe3e1;
+  --warn-soft: #fdf0d9; --warn-ink: #7a4b05;
+  --font: -apple-system, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f151e; --surface: #171f2b; --ink: #e8edf5; --muted: #9aa6b8; --line: #2a3546;
+    --accent: #6aa6ff; --accent-ink: #0b1626; --accent-soft: #1b2b45;
+    --key: #4a3f12; --key-ink: #ffe9a0;
+    --ok: #5cd0a2; --ok-soft: #14352a; --bad: #ff8c86; --bad-soft: #3d1b1a;
+    --warn-soft: #3a2c12; --warn-ink: #f3cf8e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f151e; --surface: #171f2b; --ink: #e8edf5; --muted: #9aa6b8; --line: #2a3546;
+  --accent: #6aa6ff; --accent-ink: #0b1626; --accent-soft: #1b2b45;
+  --key: #4a3f12; --key-ink: #ffe9a0;
+  --ok: #5cd0a2; --ok-soft: #14352a; --bad: #ff8c86; --bad-soft: #3d1b1a;
+  --warn-soft: #3a2c12; --warn-ink: #f3cf8e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 100px;
+}
+.wrap { max-width: 640px; margin: 0 auto; }
+button, input { font: inherit; color: inherit; touch-action: manipulation; }
+header h1 { font-size: 22px; line-height: 1.2; margin: 0 0 4px; font-weight: 600; text-wrap: balance; }
+header p { margin: 0; color: var(--muted); font-size: 14px; }
+h2 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 26px 0 10px; }
+.code { font-family: var(--mono); font-weight: 600; font-size: 14px; background: var(--accent-soft); color: var(--accent); padding: 2px 8px; border-radius: 6px; white-space: nowrap; }
+.pane[hidden] { display: none !important; }
+.intro { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.card-h { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 6px; }
+.card-h b { font-weight: 600; }
+.card ul { margin: 0; padding-left: 18px; }
+.card li { margin: 3px 0; }
+.key { background: var(--key); color: var(--key-ink); padding: 8px 10px; border-radius: 8px; margin-top: 8px; font-size: 14px; }
+.key::before { content: "Regla clave: "; font-weight: 600; }
+.confirm { margin-top: 8px; font-size: 13px; color: var(--warn-ink); background: var(--warn-soft); padding: 6px 10px; border-radius: 8px; }
+.confirm::before { content: "Por confirmar: "; font-weight: 600; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* Hoy */
+.cad { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.cad span { font-size: 13px; padding: 6px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.cad span.hoy { background: var(--accent); color: var(--accent-ink); }
+.prog { display: flex; justify-content: space-between; align-items: center; margin: 22px 0 8px; }
+.prog b { font-size: 15px; }
+.mini { font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; color: var(--muted); }
+.bar { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin-bottom: 14px; }
+.bar i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .25s; }
+.task { display: grid; grid-template-columns: 44px 1fr; gap: 10px; padding: 12px 12px; margin-bottom: 8px; }
+.chk { width: 44px; height: 44px; border-radius: 12px; border: 2px solid var(--line); background: var(--bg); cursor: pointer; display: grid; place-items: center; font-size: 22px; line-height: 1; color: transparent; }
+.chk[aria-pressed="true"] { background: var(--ok); border-color: var(--ok); color: var(--accent-ink); }
+.task.done .tt { color: var(--muted); text-decoration: line-through; }
+.task .n { font-family: var(--mono); color: var(--muted); font-size: 13px; }
+.task .tt { font-weight: 600; }
+.task .ts { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.link { display: inline-block; margin-top: 6px; font-size: 14px; font-weight: 600; color: var(--accent); background: none; border: 0; padding: 4px 0; cursor: pointer; }
+.task .body { min-width: 0; }
+
+/* Procesos */
+.chips { display: flex; gap: 8px; overflow-x: auto; padding: 14px 0 4px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: 0 0 auto; padding: 10px 14px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); font-weight: 600; font-size: 14px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.steps { list-style: none; margin: 0; padding: 0; position: relative; }
+.steps::before { content: ""; position: absolute; left: 15px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+.step { position: relative; padding-left: 44px; margin-bottom: 14px; }
+.step .n { position: absolute; left: 0; top: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-family: var(--mono); font-weight: 600; font-size: 14px; border: 3px solid var(--bg); }
+.steps.alt .n { border-radius: 10px; }
+.ol { margin: 0; padding-left: 22px; }
+.ol li { margin: 5px 0; }
+.ol .m { font-family: var(--mono); font-weight: 600; }
+
+/* Referencia */
+.search { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.ref-row { display: grid; grid-template-columns: 78px 1fr; gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--line); align-items: start; }
+.ref-row:last-child { border-bottom: 0; }
+.ref-row .t { min-width: 0; }
+.ref-row .t b { display: block; font-weight: 600; }
+.ref-row .t span { color: var(--muted); font-size: 14px; }
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 400px; }
+th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+td.m { font-family: var(--mono); font-weight: 500; }
+.sec-note { color: var(--muted); font-size: 13px; margin: 8px 2px 0; }
+.empty { color: var(--muted); padding: 12px 0; }
+
+/* Dudas */
+.duda { display: grid; grid-template-columns: 44px 1fr; gap: 10px; padding: 10px 12px; margin-bottom: 8px; }
+.duda.done .dt { color: var(--muted); text-decoration: line-through; }
+.duda .dt { font-size: 15px; }
+.duda .src { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* Quiz */
+.q-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+.q-text { font-size: 19px; font-weight: 600; line-height: 1.3; margin: 0 0 14px; text-wrap: balance; }
+.opts { display: grid; gap: 10px; }
+.opt { text-align: left; padding: 14px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--surface); cursor: pointer; min-height: 52px; }
+.opt.right { border-color: var(--ok); background: var(--ok-soft); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-soft); }
+.opt[disabled] { cursor: default; }
+.why { margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); font-size: 15px; }
+.why b.ok { color: var(--ok); } .why b.no { color: var(--bad); }
+.btn { display: block; width: 100%; margin-top: 14px; padding: 14px; border-radius: 12px; border: 0; background: var(--accent); color: var(--accent-ink); font-weight: 600; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.score { font-size: 44px; font-weight: 600; font-family: var(--mono); margin: 4px 0; }
+.miss { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+
+/* Barra inferior */
+nav.tabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: var(--surface); border-top: 1px solid var(--line);
+  padding: 8px max(8px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px)); }
+nav.tabs div { max-width: 640px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+nav.tabs button { padding: 11px 2px; border-radius: 10px; border: 0; background: transparent; color: var(--muted); font-weight: 600; font-size: 13px; cursor: pointer; min-width: 0; }
+nav.tabs button[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+
+<div class="wrap">
+<header>
+  <h1>Guía Organización e Inventario</h1>
+  <p>Tus apuntes del entrenamiento, ordenados · AP12 y LE00</p>
+</header>
+
+<section id="p-hoy" class="pane" role="tabpanel">
+  <div class="cad" id="cad"></div>
+  <div class="prog"><b id="progTxt"></b><button class="mini" id="reset">Reiniciar el día</button></div>
+  <div class="bar"><i id="progBar"></i></div>
+  <div id="tareas"></div>
+  <p class="intro">Orden y prioridad tomados del cuadro impreso del Depto. Organización. Las casillas se reinician cada día.</p>
+</section>
+
+<section id="p-proc" class="pane" role="tabpanel" hidden>
+  <div class="chips" id="chips" role="group" aria-label="Proceso"></div>
+  <div id="proc"></div>
+</section>
+
+<section id="p-ref" class="pane" role="tabpanel" hidden>
+  <input id="buscar" class="search" type="search" placeholder="Buscar código o palabra (ej. LX17, E1, sábado)" autocomplete="off">
+  <div id="ref"></div>
+</section>
+
+<section id="p-dudas" class="pane" role="tabpanel" hidden>
+  <p class="intro" style="margin-top:4px">Lo que no se leía o quedó sin aclarar. Marca cada punto cuando lo confirmes.</p>
+  <div id="dudas" style="margin-top:12px"></div>
+</section>
+
+<section id="p-quiz" class="pane" role="tabpanel" hidden>
+  <div id="quiz"></div>
+</section>
+</div>
+
+<nav class="tabs" role="tablist" aria-label="Secciones">
+  <div>
+    <button role="tab" id="t-hoy" aria-selected="true" data-tab="hoy">Hoy</button>
+    <button role="tab" id="t-proc" aria-selected="false" data-tab="proc">Procesos</button>
+    <button role="tab" id="t-ref" aria-selected="false" data-tab="ref">Datos</button>
+    <button role="tab" id="t-dudas" aria-selected="false" data-tab="dudas">Dudas</button>
+    <button role="tab" id="t-quiz" aria-selected="false" data-tab="quiz">Quiz</button>
+  </div>
+</nav>
+
+<script>
+/* ============ DATOS ============ */
+var TAREAS = [
+  { id: 't1', t: 'Inventario cíclico AP12', s: 'Lista de diferencias LX17 y ZI03 · Exactitud · Análisis de diferencias', p: 'inv' },
+  { id: 't2', t: 'Decomiso', s: '', p: 'deco' },
+  { id: 't3', t: 'Tratamiento PNC', s: 'Movilización de producto a PNC · Listado de PNC por área · Tratamiento 201 avería', p: 'deco' },
+  { id: 't4', t: 'Listado de diferencias AP12 / LE00', s: '', p: 'inv' },
+  { id: 't5', t: 'Rango de fecha: 15 días LE00', s: '', p: 'fechas' },
+  { id: 't6', t: 'Negados LE00 / AP12', s: '', p: 'negados' },
+  { id: 't7', t: 'Reporte de despacho AP12', s: 'Todavía no hay apuntes de esta tarea', p: null },
+  { id: 't8', t: 'Inventario cíclico LE00', s: '', p: 'inv' },
+  { id: 't9', t: 'Pedido de suministros', s: 'Los pedidos se hacen los sábados', p: 'sumin' },
+  { id: 't10', t: 'Reporte de tramerías, pisos y protecciones', s: '', p: 'tram' }
+];
+
+var PROCS = [
+  { id: 'inv', t: 'Inventario',
+    intro: 'AP12 es frutas, vegetales y secos. LE00 es lácteos y embutidos. Umbral de diferencias: AP12 desde 5,000 y LE00 desde 10,000.',
+    blocks: [
+      { h: 'Tu hoja de pasos', ol: [
+        'Bloquear las ubicaciones y esperar a que terminen de despachar los materiales pendientes.',
+        'Digitar el documento principal (validar posición nueva).',
+        'Digitar recuentos.',
+        'Validar el estado del material (documentos).',
+        'Lista de diferencias.',
+        'Stock de materiales con diferencia: AP12 desde 5,000, LE00 desde 10,000.',
+        'Modificar el recuento o el documento.',
+        'Actualizar la lista de diferencias.',
+        'Reporte de digitación (ZI03).',
+        'Preparar el correo con las listas de diferencias.',
+        'LE00: cerrar inventario / compensar.',
+        'AP12: Exactitud 1 y Exactitud 2 (se hace dos veces para confirmar los movimientos).',
+        'Al terminar: abrir (liberar) las ubicaciones.'
+      ] },
+      { h: 'Antes de contar', steps: [
+        { c: 'Bloqueo', n: 'Bloquea las ubicaciones', pts: ['Hazlo antes de empezar el inventario.', 'Espera a que terminen de despachar los materiales pendientes.', 'Cómo bloquear: LS24 por stock o LS06 masivo (pestaña Bloqueos).'] }
+      ] },
+      { h: 'Conteo, transacción por transacción', steps: [
+        { c: 'LI11', n: 'Registro de documento', pts: ['Anota el número de documento.', 'Agrega la mercancía (digitar).', 'Al terminar, guarda los cambios.', 'Verifica si se debe agregar posición. Si es así, considera fecha de 3 días (del día anterior).', 'Guarda.'],
+          key: 'Si queda algún material sin contar, colócalo en "0" para que se refleje la diferencia.',
+          conf: 'Cómo se cuenta exactamente la fecha de 3 días "del día anterior".' },
+        { c: 'LI14', n: 'Desencadenar recuento', pts: ['Por cuenta.', 'Desencadenar recuento (sin seleccionar).'],
+          key: 'Los que coinciden con el stock y los que están en 0 no se desencadenan.' },
+        { c: 'LI04', n: 'Imprimir documento', pts: ['Salida inmediata.'],
+          key: 'Si indica que ya se contabilizó, no hay necesidad de recuento: todo coincide con el sistema.' },
+        { c: 'LX22', n: 'Revisión del estado del documento', pts: ['Para compensar: selecciona todos y elige esa opción.', 'Se trabaja documento por documento.'] },
+        { c: 'LI11', n: 'Digitar recuento', pts: ['Documento #.', 'Recuento #.'],
+          conf: 'En tus notas LI11 sirve para el registro y para digitar el recuento. Confirma si es la misma transacción con otra opción.' },
+        { c: 'LX17', n: 'Listado de diferencias', pts: ['Tipo de almacén = *', 'Variante = JOEL'],
+          key: 'Valida las diferencias desde 5,000 en AP12 y desde 10,000 en LE00, y tira el stock de esos materiales.',
+          conf: 'Qué significa "tirar stock". En tu hoja de pasos se lee como sacar el stock de los materiales con diferencia.' },
+        { c: 'LI12', n: 'Modificación de recuento', pts: ['Indica el recuento #.', 'Sirve para corregir un recuento ya digitado.'] }
+      ] },
+      { h: 'Cierre y exactitud', steps: [
+        { c: 'ZI03', n: 'Reporte de digitación de inventario', pts: ['Tipo de almacén = *'] },
+        { c: 'ZLX02', n: 'Exactitud de stock', pts: ['Variante: Exactitud.', 'Se corre con las listas de diferencia del día.', 'AP12: se hace dos veces (Exactitud 1 y 2) para confirmar los movimientos.', 'Cada reporte lleva sus filtros, en este orden (abajo).'] }
+      ], table: { title: 'Filtros de ZLX02, en orden', cols: ['#', 'Ubicación', 'Filtro'], rows: [
+        ['1', '701–703*', 'Altura: solo ubicaciones bajas (011 y 012)'],
+        ['2', '704–706*', 'Altura: solo ubicaciones bajas (011 y 012)'],
+        ['3', '707', 'General *'],
+        ['4', '401–403*', 'Sin filtro de altura'],
+        ['5', '01–18*', 'Sin filtro de altura'],
+        ['6', '207*', 'Tipo de almacén 001 (disponible para despacho)'],
+        ['7', 'No se lee en tus notas', 'Tipo 001 (desde el 207 en adelante)'],
+        ['8', '202*', 'Tipo 001'],
+        ['9', '203–204*', 'Tipo 001. En tus notas también dice "sin filtro seco"']
+      ], conf: 'Qué ubicación es el paso 7 y qué significa "sin filtro seco" en el 9.' } },
+      { h: 'Al terminar', steps: [
+        { c: 'Liberar', n: 'Abre las ubicaciones', pts: ['Libera las ubicaciones que bloqueaste al empezar.'] }
+      ] }
+    ] },
+  { id: 'negados', t: 'Negados', intro: 'Se verifica de manera recurrente durante el día.', blocks: [
+    { h: 'Revisar negados', steps: [
+      { c: 'LT22', n: 'Visualizar OT', pts: ['Número de almacén.', 'Tipo de almacén = *', 'Todas, con su status.', 'Ref: desde ✓ y destino ✓.', 'Parámetro: fecha de interés.', 'Variante: NEGADOS YAN.'] },
+      { c: 'Stock', n: 'Generar el stock del material a revisar', pts: ['Genera el stock del material que vas a revisar.'],
+        key: 'Revisa los negados contra el stock completo, no contra una sola ubicación.' },
+      { c: 'Negados', n: 'Actualizar el archivo', pts: ['Abre "Negados" en el navegador.', 'Entra a la carpeta LE00.', 'Ubica el mes actual y lleva el recuadro.'],
+        conf: 'Qué es "llevar el recuadro".' }
+    ] },
+    { h: 'Confirmar movimientos (LT22)', steps: [
+      { c: 'LT22', n: 'Movimientos abiertos', pts: ['Número de almacén y tipo de almacén.', 'Status: abierta.', 'Ref: de → destino.', 'Fecha del movimiento.', 'Movimientos LE00.', 'Rojo = no confirmadas.', 'Para confirmar: ícono del montacargas con ✓ (confirmación).'],
+        key: 'Confirmar OT visible.' }
+    ] }
+  ] },
+  { id: 'mb1a', t: 'MB1A 201 / 202', intro: 'En MB1A hay dos opciones para mover: 201 o 202. Tu nota del 202 recoge lo que cambia respecto al 201.', blocks: [
+    { h: 'Movimiento 201 (continuación)', steps: [
+      { c: 'OT visible', n: 'Después de que la OT está visible', pts: ['Ícono de inventario, luego ícono de salida visible (F5).', 'Elige la procedencia de la compensación.', 'Al compensar: ícono de Generar y Material Siguiente.', 'Al terminar de seleccionar todo, guarda.'],
+        conf: 'El inicio del 201 no está en tus fotos (faltan IMG_1890 e IMG_1896).' },
+      { c: 'LT12', n: 'Confirmar el movimiento', pts: ['# OT (se coloca automático).', 'Contabilizas.', 'Guardas los cambios.'] }
+    ] },
+    { h: 'Movimiento 202', steps: [
+      { c: 'MB1A', n: 'Lo distinto al 201', pts: ['Paletizar.', 'Enter y coloca el destino: tipo 0GR.', 'Contabilizar.', 'Confirmar en LT12.'] }
+    ] }
+  ] },
+  { id: 'm920', t: 'Mov. 920', intro: 'Movimiento de ubicación y de diferencia con orden de transferencia (OT).', blocks: [
+    { h: 'Crear la OT', steps: [
+      { c: 'LT01', n: 'Creación de OT', pts: ['Número de almacén: AP12 o LE00.', 'Clase de movimiento = 920.', 'Número de material.', 'Centro cajas: centro 101.', 'ENTER.'] },
+      { c: 'Confirmar', n: 'Procedencia y destino', pts: ['Siempre marca confirmar.', 'Procedencia: lugar actual (tipo de almacén y ubicación).', 'Destino: el lugar nuevo.'],
+        key: 'En AP12 se llevan los datos de TP y AR: solo coloca destino y procedencia.' },
+      { c: '999', n: 'Si hay diferencia', pts: ['Coloca destino 999, seguido de DIFERENCIA.', 'Movimiento LE00 de diferencia y cambio de ubicación: tipo de almacén, ubicación, destino.', 'Opciones de diferencia: negativa o positiva. Verifica el destino o la procedencia.'],
+        key: 'En movimientos de diferencia, los valores negativos en stock significan sobrantes.' }
+    ] },
+    { h: 'Tipos de almacén', steps: [
+      { c: 'E1', n: 'Ubicaciones sencillas', pts: ['Capacidad de 1 paleta.', 'Jaula abajo.'] },
+      { c: 'E2', n: 'Ubicaciones de gran reserva', pts: ['Jaula arriba.', 'Doble capacidad.'] },
+      { c: 'E3', n: 'Doble capacidad', pts: ['En tus notas quedó en blanco. Por tu explicación, los dobles pueden ser E2 y E3.'] }
+    ] }
+  ] },
+  { id: 'deco', t: 'Decomiso y PNC', intro: 'PNC: la idea inicial es que no dure mucho tiempo, bien identificado y organizado. Entrada con movimiento 902 y despacho con 910.', blocks: [
+    { h: 'Tratamiento PNC', steps: [
+      { c: 'PNC', n: 'Movilización de producto a PNC', pts: ['Entrada con movimiento 902.', 'Despacho con movimiento 910.'] },
+      { c: 'PNC', n: 'Listado de PNC por área', pts: ['Listado de PNC por área.'] },
+      { c: '201', n: 'Tratamiento 201 avería', pts: ['Ver MB1A, movimiento 201.'] }
+    ] },
+    { h: 'Decomiso', steps: [
+      { c: 'Plantilla', n: 'Usa "Decomiso 13" o el control de avería', pts: ['Las mermas de producción llevan L3.', 'Los productos fuera de producción son avería.'] },
+      { c: '2 copias', n: 'Imprime dos copias', pts: ['Imprime 2 copias del documento.'], conf: 'Para quién es cada copia.' },
+      { c: 'Firma', n: 'Firman el documento', pts: ['Subgerente, o Coordinador de Recibo y Seguridad.'],
+        key: 'Envía al Recibo el documento firmado.' }
+    ] }
+  ] },
+  { id: 'bloqueo', t: 'Bloqueos', intro: 'Se bloquea antes de un inventario y se libera al terminar.', blocks: [
+    { h: 'Bloqueo de ubicaciones', note: 'El título en tus notas dice "y cambio de fecha CAD", pero no anotaste ese paso.', steps: [
+      { c: 'LS24', n: 'Por stock', pts: ['Selecciona el material por ubicación.', 'Entorno → Modificar cuenta.', 'Bloqueo de entrada: evita que entre mercancía a esa ubicación.', 'Bloqueo de salida: evita su despacho.', 'Guarda y luego refresca.'],
+        conf: 'La opción exacta del menú Entorno.' },
+      { c: 'LS06', n: 'Bloqueo masivo', pts: ['Tipo de almacén.', 'Ubicación objetivo.', 'Genera y selecciona las ubicaciones.', 'Foco de candado.', 'Guarda.'] }
+    ] }
+  ] },
+  { id: 'fechas', t: 'Fechas FPC', intro: 'FPC es fecha próxima caducidad. Diario: reporte de 15 días. Domingos: levantamiento de 45 días.', blocks: [
+    { h: 'Control de rangos de fecha', steps: [
+      { c: 'ZI18', n: 'Lista FPC por categoría', pts: ['Número de almacén.', 'Tipo de almacén: 00A, 00R y ZBR.', 'Selecciona el intervalo de días.', 'Se identifican los materiales con 15 días a la fecha actual.'] },
+      { c: 'Revisión', n: 'Después del reporte', pts: ['Haz el levantamiento de los materiales de 15 días o menos.', 'Haz correcciones y revisión.', 'Prepara un correo indicando si hay materiales con 5 días o menos.'] },
+      { c: 'Domingo', n: 'Levantamiento de 45 días', pts: ['Los domingos se levantan los materiales a 45 días o menos de su vencimiento.', 'Tu equipo los revisa y verifica que todas las fechas sean iguales.'] }
+    ] }
+  ] },
+  { id: 'sumin', t: 'Suministros', alt: true, intro: 'Los pedidos se hacen los sábados. Hay tres vías. Al terminar, elabora el correo; se puede unificar en uno solo. Las cantidades están en Datos.', blocks: [
+    { h: 'Vías de pedido', steps: [
+      { m: 'A', c: 'ME27', n: 'Pedregal (105)', pts: ['Crear (ME27).', 'Centro suministrador 105.', 'Datos de organización: CCN.', 'Grupo de compra: CCN.', 'Tipo de imputación K.', 'Fecha de entrega: 2 días después.', 'Almacén AP12, ENTER.', 'Nuevo pedido: coloca el material, ENTER; cantidad, ENTER.', 'Centro de coste: AP12 (Joan).', 'Al terminar la lista, guarda y copia el número de documento.', 'Elabora el correo.'],
+        conf: 'Con qué usuario se hace este pedido (tus notas indican uno distinto para 105 y 101).' },
+      { m: 'B', c: 'ZME27', n: 'Textil (101)', pts: ['Crear ZME27.'] },
+      { m: 'C', c: 'Intranet', n: 'Catálogo de suministro', pts: ['Catálogo de suministro → hacer solicitud.', 'Suministro de oficina → material gastable → selecciona el artículo (ej. lapicero 1001460).', 'Agregar a la solicitud y repite con los demás materiales.', 'Termina la solicitud y verifica el estado.', 'Crear solicitud.', 'Verifica el número de pedido para enviar el correo.'] }
+    ] }
+  ] },
+  { id: 'tram', t: 'Tramerías y pisos', intro: 'El reporte de tramerías y pisos se hace en Fractal. El reporte de walkies se hace en un formulario de Google.', blocks: [
+    { h: 'Reportes', steps: [
+      { c: 'Fractal', n: 'Tramerías y pisos', pts: ['Fractal es la plataforma para reportar pisos y tramerías del almacén.', 'Usa el + para agregar un reporte.'],
+        key: 'El 200 es el nombre asignado a la tramería de producción.' },
+      { c: 'Walkies', n: 'Reporte de walkies', pts: ['Los walkies son los vehículos de carga.', 'Se reporta en un formulario de Google.'] }
+    ] },
+    { h: 'Partes de la tramería', steps: [
+      { c: 'Perfiles', n: 'Los verticales azules', pts: ['Perfiles: los verticales azules.'] },
+      { c: 'Largueros', n: 'Los horizontales', pts: ['Largueros: los horizontales.'] },
+      { c: 'Travesaños', n: 'Soportan la carga', pts: ['Travesaños: soportan la carga.'] }
+    ] }
+  ] },
+  { id: 'otros', t: 'Correos y otros', blocks: [
+    { h: 'Correos', steps: [
+      { c: 'Furgón', n: 'Envíos de furgón con paletas plásticas', pts: ['El correo lleva número de furgón, parqueo y número de guía asignada.', 'Los destinatarios se buscan en un correo antiguo.'] },
+      { c: 'Comedor', n: 'Almuerzo sin costo', pts: ['Formulario del comedor para almuerzo sin costo.', 'Enviar al comedor con copia a Joan y Elías.'] }
+    ] }
+  ] }
+];
+
+var REF = [
+  { id: 'tx', title: 'Transacciones', type: 'list', rows: [
+    ['MB1A', 'Movimientos 201 o 202', 'Dos opciones para mover. El 202 lleva paletizar y destino tipo 0GR.'],
+    ['LT12', 'Confirmar movimiento', '# OT se coloca automático. Contabilizar y guardar.'],
+    ['LT01', 'Creación de OT', 'Clase de movimiento 920. Siempre confirmar.'],
+    ['LT22', 'Visualizar OT (masivo)', 'Variante NEGADOS YAN. También confirma movimientos.'],
+    ['LT24', 'Estudio de materiales (por material)', 'Variante OSCAR. El reporte arrastra información hasta 3 meses atrás.'],
+    ['LS24', 'Bloqueo por stock', 'Bloqueo de entrada o de salida.'],
+    ['LS06', 'Bloqueo masivo de ubicaciones', 'Por tipo de almacén, con foco de candado.'],
+    ['LI11', 'Registro de documento / digitar recuento', 'Material sin contar va en 0.'],
+    ['LI14', 'Desencadenar recuento', 'No se desencadenan los que coinciden ni los que están en 0.'],
+    ['LI04', 'Imprimir documento', 'Si ya está contabilizado, no hay recuento.'],
+    ['LX22', 'Estado del documento', 'Para compensar: seleccionar todos, uno por uno.'],
+    ['LX17', 'Listado de diferencias', 'Variante JOEL. AP12 desde 5,000, LE00 desde 10,000.'],
+    ['LI12', 'Modificación de recuento', 'Pide el recuento #.'],
+    ['ZI03', 'Reporte de digitación de inventario', 'Tipo de almacén *.'],
+    ['ZI18', 'Lista FPC por categoría', 'Tipos 00A, 00R y ZBR, por intervalo de días.'],
+    ['ZLX02', 'Exactitud de stock', 'Variante Exactitud. Con filtros por ubicación.'],
+    ['ME27', 'Pedido de suministro (Pedregal 105)', 'ZME27 para Textil 101.']
+  ] },
+  { id: 'mov', title: 'Movimientos', type: 'list', rows: [
+    ['201', 'Movimiento de MB1A', 'Tratamiento 201 de avería.'],
+    ['202', 'Movimiento de MB1A', 'Lleva paletizar y destino tipo 0GR.'],
+    ['902', 'Entrada de PNC', ''],
+    ['910', 'Despacho de PNC', ''],
+    ['920', 'Movimiento con OT (LT01)', 'Cambio de ubicación y diferencia.'],
+    ['999', 'Destino para diferencias', 'Seguido de DIFERENCIA.']
+  ] },
+  { id: 'alm', title: 'Almacenes y tipos de almacenamiento', type: 'list', rows: [
+    ['AP12', 'Frutas y vegetales, y secos', ''],
+    ['LE00', 'Lácteos y embutidos', ''],
+    ['001', 'Disponible para despacho', ''],
+    ['0GR', 'Tránsito / movimiento', ''],
+    ['00A', 'Ubicaciones fijas', ''],
+    ['00R', 'Reservas', ''],
+    ['ZBR', 'Zona de bardas (materiales pequeños)', 'También llamada zona de jaula.'],
+    ['E1', 'Ubicaciones sencillas', '1 paleta. Jaula abajo.'],
+    ['E2', 'Ubicaciones de gran reserva', 'Jaula arriba. Doble capacidad.'],
+    ['E3', 'Doble capacidad', 'Los dobles pueden ser E2 y E3.']
+  ] },
+  { id: 'ubi', title: 'Ubicaciones y capacidad', type: 'table', cols: ['Zona', 'Ubicación', 'Capacidad / regla'], rows: [
+    ['Seco', '01–11', '5 paletas por ubicación'],
+    ['Seco', '12–17', '1 paleta'],
+    ['Frío', '701–703', 'Piso + altura'],
+    ['Frío', '704–706', 'Piso + altura'],
+    ['Frío', '707', 'General. Marcado distinto en tus notas.'],
+    ['Frío', '401–403', 'Piso + altura'],
+    ['Menudeo', '203', '6–7 cajas'],
+    ['Menudeo', '707/02', '3 cajas'],
+    ['Menudeo', '707/05', '4–10 cajas'],
+    ['Jaula (ZBR)', '404–407', 'Sencillas'],
+    ['Jaula (ZBR)', '408–411', 'Doble ubicación'],
+    ['Andenes', '802–805, 808–809', 'Sencillas (E1)'],
+    ['Andenes', '801, 806, 807, 810, 703', 'Doble capacidad (E2 / E3)']
+  ] },
+  { id: 'var', title: 'Variantes', type: 'table', cols: ['Variante', 'Se usa en'], rows: [
+    ['JOEL', 'LX17, listado de diferencias'],
+    ['NEGADOS YAN', 'LT22, negados'],
+    ['OSCAR', 'LT24, estudio de materiales'],
+    ['Exactitud', 'ZLX02, exactitud de stock']
+  ] },
+  { id: 'ideal', title: 'Stock ideal por semana', type: 'table', cols: ['Artículo', 'Ideal', 'Unidad de manejo'], note: 'La unidad de manejo es lo que trae cada caja. Los pedidos se hacen los sábados.', rows: [
+    ['Cinta pesante', '10 cajas', '36 pz'],
+    ['Ticket de paleta', '30 cajas', '3 pz'],
+    ['Resma de papel', '20 cajas', '10 pz'],
+    ['Hoja continua', '26 cajas', '1 pz'],
+    ['Etiquetas de trazabilidad (confirmar)', '10 cajas', 'Θ 6 pz · P 8 pz'],
+    ['Tinta impresora Tip Label', '24 pzas', ''],
+    ['Papel de pesaje', '3 cajas', '100 p'],
+    ['Ticket de revisión', '30 pz', ''],
+    ['Guantes azules (confirmar cantidad)', '46 pz', ''],
+    ['Vasos', '2 cajas', ''],
+    ['Mascarillas', '30 pzas', ''],
+    ['Fleje', '8 paletas', ''],
+    ['Fleje MEP (confirmar)', '1 paleta', ''],
+    ['Fundas', '100 p', '']
+  ] },
+  { id: 'sug', title: 'Cantidad sugerida por pedido', type: 'table', cols: ['Artículo', 'Cantidad'], note: 'En tus notas "c" parece caja y "p" pieza. Falta confirmar las unidades y los marcadores.', rows: [
+    ['Lapiceros (12 pzas)', '8 c'], ['Marcadores (12 p)', '4 c – 6 c (confirmar)'], ['Tachuela', '3 c'], ['Sacapuntas', '9–10 p'],
+    ['Tijeras', '6 p'], ['Lápiz (12 p)', '3 c'], ['Grapadora', '6'], ['Folder', '1 c por mes'],
+    ['Fleje', '8 paletas (240 rollos por paleta)'], ['Fleje de máquina', '40 rollos por mes'], ['Ticket de paleta', '10 semanales'],
+    ['Hojas (resma)', '4 c semanales'], ['Rollo label', '1 p semanal'], ['Cinta (36 p)', '1 c semanal'],
+    ['Hoja continua', '2 c semanales'], ['Rollo de peso (100)', '1 c mensual']
+  ] },
+  { id: 'glo', title: 'Glosario', type: 'list', rows: [
+    ['FPC', 'Fecha próxima caducidad', ''],
+    ['PNC', 'Producto no conforme', 'Debe durar poco, bien identificado y organizado.'],
+    ['OT', 'Orden de transferencia', ''],
+    ['Walkies', 'Vehículos de carga', ''],
+    ['Fractal', 'Plataforma para reportar pisos y tramerías', ''],
+    ['200', 'Tramería de producción', 'Nombre asignado.'],
+    ['Perfiles', 'Los verticales azules', 'De la tramería.'],
+    ['Largueros', 'Los horizontales', 'De la tramería.'],
+    ['Travesaños', 'Soportan la carga', 'De la tramería.']
+  ] },
+  { id: 'resp', title: 'Quién hace qué (PR-P-01, edición 17)', type: 'table', cols: ['Tarea', 'Responsable', 'Soporte'], rows: [
+    ['Registrar los negados del despacho y tratarlos', 'Supervisor de organización / Coordinador de despacho', 'PR-P-01-SP-11'],
+    ['Tratar averías y decomisos', 'Supervisor de organización', 'PR-OP-09-IC-01'],
+    ['Inventarios cíclicos de cantidades y caducados', 'Especialista de organización', 'Sistema SAP'],
+    ['Condiciones de temperatura del almacenamiento', 'Almacén Perecederos', 'PR-P-01-SP-02']
+  ] },
+  { id: 'usr', title: 'Usuarios en el reporte LT24', type: 'table', cols: ['Almacén / usuario', 'Dueños'], note: 'Son usuarios que pueden aparecer en el reporte, para saber quién hizo un movimiento. Revisa la ortografía de los nombres.', rows: [
+    ['L Perecederos', 'Vanov'],
+    ['LAP12', 'Engel / Dorlas'],
+    ['W Jhoseph', 'Willan / Jam'],
+    ['G Perecederos', 'Duran']
+  ] }
+];
+
+var DUDAS = [
+  ['d1', 'ZLX02: no se lee el paso 7 del orden de filtros.', 'Foto IMG_1894'],
+  ['d2', 'ZLX02 paso 9 (203–204): tus notas dicen "sin filtro seco".', 'Foto IMG_1894'],
+  ['d3', 'Falta el inicio del movimiento 201 en MB1A.', 'Faltan IMG_1890 e IMG_1896'],
+  ['d4', 'Nombres de usuarios del reporte LT24: revisar ortografía.', 'Foto IMG_1884'],
+  ['d5', 'Negados: qué es "llevar el recuadro" en el archivo.', 'Foto IMG_1891'],
+  ['d6', 'ZBR: la burbuja "Almacenamiento 404–408" no quedó aclarada.', 'Foto IMG_1891'],
+  ['d7', 'LI11: cómo se cuenta la fecha de 3 días "del día anterior".', 'Foto IMG_1895'],
+  ['d8', 'LI11 aparece dos veces (registro y digitar recuento): ¿es la misma transacción?', 'Foto IMG_1895'],
+  ['d9', 'Tirar stock: se lee como sacar el stock de los materiales con diferencia.', 'Foto IMG_1895 y IMG_1893'],
+  ['d11', 'LS24: la opción exacta del menú Entorno (se lee "Modificar cuenta").', 'Foto IMG_1897'],
+  ['d12', 'Decomiso: para quién es cada una de las 2 copias.', 'Foto IMG_1897'],
+  ['d13', 'Pedido ME27: con qué usuario se hace (105 y 101 usan uno distinto).', 'Foto IMG_1886'],
+  ['d14', 'Suministros: unidades "c" y "p", y cantidad de marcadores.', 'Foto IMG_1887'],
+  ['d15', 'Stock ideal: confirmar etiquetas de trazabilidad, guantes azules (46) y fleje MEP.', 'Foto IMG_1888'],
+  ['d16', 'El cuadro impreso dice "LE0" y "AP1". Aquí se usan LE00 y AP12.', 'Foto IMG_1900'],
+  ['d17', 'Reporte de despacho AP12 (tarea 7): todavía no hay apuntes.', 'Cuadro impreso'],
+  ['d18', 'Cambio de fecha CAD: aparece en el título de bloqueos, pero no tiene pasos.', 'Foto IMG_1897']
+];
+
+/* ============ UTIL ============ */
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function $(id) { return document.getElementById(id); }
+function lsGet(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+function todayKey() { var d = new Date(); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
+
+/* ============ HOY ============ */
+var DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+var MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+var hoy = lsGet('gs_hoy', { d: '', done: {} });
+if (hoy.d !== todayKey()) hoy = { d: todayKey(), done: {} };
+function saveHoy() { lsSet('gs_hoy', hoy); }
+function renderCad() {
+  var n = new Date(), w = n.getDay();
+  $('cad').innerHTML =
+    '<span class="hoy">' + DIAS[w] + ' ' + n.getDate() + ' de ' + MESES[n.getMonth()] + '</span>' +
+    '<span>Diario: reporte de 15 días</span>' +
+    '<span' + (w === 6 ? ' class="hoy"' : '') + '>Sábado: pedidos de suministros</span>' +
+    '<span' + (w === 0 ? ' class="hoy"' : '') + '>Domingo: levantamiento de 45 días</span>';
+}
+function renderHoy() {
+  var total = TAREAS.length, n = 0;
+  $('tareas').innerHTML = TAREAS.map(function (t, i) {
+    var d = !!hoy.done[t.id]; if (d) n++;
+    return '<div class="card task' + (d ? ' done' : '') + '"><button class="chk" data-id="' + t.id + '" aria-pressed="' + d + '" aria-label="Marcar tarea ' + (i + 1) + '">✓</button>' +
+      '<div class="body"><div class="n">Prioridad ' + (i + 1) + '</div><div class="tt">' + esc(t.t) + '</div>' +
+      (t.s ? '<div class="ts">' + esc(t.s) + '</div>' : '') +
+      (t.p ? '<button class="link" data-go="' + t.p + '">Ver pasos →</button>' : '') + '</div></div>';
+  }).join('');
+  $('progTxt').textContent = n + ' de ' + total + ' tareas';
+  $('progBar').style.width = (n / total * 100) + '%';
+}
+$('tareas').addEventListener('click', function (e) {
+  var c = e.target.closest('.chk'), g = e.target.closest('.link');
+  if (c) { var id = c.getAttribute('data-id'); hoy.done[id] = !hoy.done[id]; saveHoy(); renderHoy(); }
+  else if (g) { showProc(g.getAttribute('data-go')); setTab('proc'); }
+});
+$('reset').addEventListener('click', function () { hoy = { d: todayKey(), done: {} }; saveHoy(); renderHoy(); });
+renderCad(); renderHoy();
+
+/* ============ PROCESOS ============ */
+function stepsHtml(list, start, alt) {
+  return '<ol class="steps' + (alt ? ' alt' : '') + '">' + list.map(function (s, i) {
+    return '<li class="step"><span class="n">' + esc(s.m || (start + i)) + '</span><div class="card">' +
+      '<div class="card-h"><span class="code">' + esc(s.c) + '</span><b>' + esc(s.n) + '</b></div>' +
+      '<ul>' + s.pts.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>' +
+      (s.key ? '<div class="key">' + esc(s.key) + '</div>' : '') +
+      (s.conf ? '<div class="confirm">' + esc(s.conf) + '</div>' : '') + '</div></li>';
+  }).join('') + '</ol>';
+}
+function tableHtml(tb) {
+  return '<div class="card tbl" style="margin-top:4px"><div class="card-h"><b>' + esc(tb.title) + '</b></div><table><thead><tr>' +
+    tb.cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+    tb.rows.map(function (r) { return '<tr>' + r.map(function (c, i) { return '<td' + (i === 0 || (tb.cols.length === 3 && i === 1) ? ' class="m"' : '') + '>' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('') +
+    '</tbody></table>' + (tb.conf ? '<div class="confirm">' + esc(tb.conf) + '</div>' : '') + '</div>';
+}
+function procHtml(p) {
+  var h = p.intro ? '<p class="intro">' + esc(p.intro) + '</p>' : '';
+  p.blocks.forEach(function (b) {
+    h += '<h2>' + esc(b.h) + '</h2>';
+    if (b.note) h += '<p class="intro" style="margin:0 0 12px">' + esc(b.note) + '</p>';
+    if (b.ol) h += '<div class="card"><ol class="ol">' + b.ol.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ol></div>';
+    if (b.steps) h += stepsHtml(b.steps, 1, p.alt);
+    if (b.table) h += tableHtml(b.table);
+  });
+  return h;
+}
+function showProc(id) {
+  var p = PROCS.filter(function (x) { return x.id === id; })[0] || PROCS[0];
+  $('proc').innerHTML = procHtml(p);
+  Array.prototype.forEach.call(document.querySelectorAll('#chips .chip'), function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-id') === p.id ? 'true' : 'false'); });
+  lsSet('gs_proc', p.id);
+  var act = document.querySelector('#chips .chip[aria-pressed="true"]');
+  if (act && act.scrollIntoView) { try { act.scrollIntoView({ inline: 'center', block: 'nearest' }); } catch (e) {} }
+}
+$('chips').innerHTML = PROCS.map(function (p) { return '<button class="chip" data-id="' + p.id + '" aria-pressed="false">' + esc(p.t) + '</button>'; }).join('');
+$('chips').addEventListener('click', function (e) { var c = e.target.closest('.chip'); if (c) { showProc(c.getAttribute('data-id')); window.scrollTo(0, 0); } });
+showProc(lsGet('gs_proc', 'inv'));
+
+/* ============ DATOS ============ */
+function rowText(r) { return r.join(' ').toLowerCase(); }
+function renderRef(q) {
+  q = (q || '').trim().toLowerCase();
+  var out = '';
+  REF.forEach(function (s) {
+    var rows = s.rows.filter(function (r) { return !q || rowText(r).indexOf(q) > -1 || s.title.toLowerCase().indexOf(q) > -1 || (s.note || '').toLowerCase().indexOf(q) > -1; });
+    if (!rows.length) return;
+    out += '<h2>' + esc(s.title) + '</h2>';
+    if (s.type === 'list') {
+      out += '<div class="card">' + rows.map(function (r) {
+        return '<div class="ref-row"><span><span class="code">' + esc(r[0]) + '</span></span><div class="t"><b>' + esc(r[1]) + '</b>' + (r[2] ? '<span>' + esc(r[2]) + '</span>' : '') + '</div></div>';
+      }).join('') + '</div>';
+    } else {
+      out += '<div class="card tbl"><table><thead><tr>' + s.cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+        rows.map(function (r) { return '<tr>' + r.map(function (c, i) { return '<td' + (i === 1 && s.cols.length === 3 && s.id === 'ubi' ? ' class="m"' : (i === 0 && s.id !== 'ubi' && s.id !== 'ideal' && s.id !== 'sug' && s.id !== 'usr' && s.id !== 'resp' ? ' class="m"' : '')) + '>' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('') +
+        '</tbody></table></div>';
+    }
+    if (s.note) out += '<p class="sec-note">' + esc(s.note) + '</p>';
+  });
+  $('ref').innerHTML = out || '<div class="empty">Sin resultados.</div>';
+}
+renderRef('');
+$('buscar').addEventListener('input', function (e) { renderRef(e.target.value); });
+
+/* ============ DUDAS ============ */
+var dudasOk = lsGet('gs_dudas', {});
+function renderDudas() {
+  $('dudas').innerHTML = DUDAS.map(function (d) {
+    var ok = !!dudasOk[d[0]];
+    return '<div class="card duda' + (ok ? ' done' : '') + '"><button class="chk" data-id="' + d[0] + '" aria-pressed="' + ok + '" aria-label="Marcar como aclarado">✓</button><div><div class="dt">' + esc(d[1]) + '</div><div class="src">' + esc(d[2]) + '</div></div></div>';
+  }).join('');
+}
+$('dudas').addEventListener('click', function (e) {
+  var c = e.target.closest('.chk'); if (!c) return;
+  var id = c.getAttribute('data-id'); dudasOk[id] = !dudasOk[id]; lsSet('gs_dudas', dudasOk); renderDudas();
+});
+renderDudas();
+
+/* ============ QUIZ ============ */
+var BANK = [
+  { q: '¿Qué almacén es de frutas, vegetales y secos?', ok: 'AP12', bad: ['LE00', 'ZBR', 'LT12'], why: 'AP12 es frutas, vegetales y secos. LE00 es lácteos y embutidos.' },
+  { q: '¿Qué almacén es de lácteos y embutidos?', ok: 'LE00', bad: ['AP12', '001', 'E1'], why: 'LE00: lácteos y embutidos.' },
+  { q: '¿Qué transacción registra el documento de inventario y agrega la mercancía?', ok: 'LI11', bad: ['LI14', 'LX17', 'LI04'], why: 'LI11: número de documento, mercancía y guardar.' },
+  { q: 'Al guardar en LI11 queda un material sin contar. ¿Qué haces?', ok: 'Lo colocas en "0" para que refleje la diferencia', bad: ['Lo dejas vacío', 'Lo borras del documento', 'Esperas al recuento para agregarlo'], why: 'En "0" la diferencia aparece después en el listado.' },
+  { q: '¿Qué transacción desencadena el recuento?', ok: 'LI14', bad: ['LI12', 'LX22', 'ZI03'], why: 'LI14: por cuenta y sin seleccionar.' },
+  { q: '¿Qué materiales NO se desencadenan en LI14?', ok: 'Los que coinciden con el stock y los que están en 0', bad: ['Los que tienen diferencia negativa', 'Los de la zona de bardas', 'Los que ya tienen recuento #'], why: 'Si ya coinciden o están en 0, no hay nada que recontar.' },
+  { q: 'LI04 indica que el documento ya está contabilizado. ¿Qué haces?', ok: 'No hace falta recuento, todo coincide con el sistema', bad: ['Haces el recuento igual', 'Lo modificas con LI12', 'Corres de nuevo LI14'], why: 'Contabilizado significa que físico y sistema ya coinciden.' },
+  { q: '¿Qué transacción revisa el estado del documento?', ok: 'LX22', bad: ['LX17', 'ZLX02', 'LI04'], why: 'LX22. Para compensar, seleccionas todos y eliges esa opción, documento por documento.' },
+  { q: '¿Cuál saca el listado de diferencias?', ok: 'LX17', bad: ['LX22', 'ZI03', 'LI12'], why: 'LX17 con tipo de almacén * y variante JOEL.' },
+  { q: 'En AP12, ¿desde qué valor validas las diferencias en LX17?', ok: '5,000', bad: ['500', '1,000', '10,000'], why: 'AP12 desde 5,000. LE00 desde 10,000.' },
+  { q: 'En LE00, ¿desde qué valor validas las diferencias?', ok: '10,000', bad: ['5,000', '1,000', '50,000'], why: 'LE00 desde 10,000.' },
+  { q: '¿Qué transacción corrige un recuento ya digitado?', ok: 'LI12', bad: ['LI14', 'LI04', 'LX22'], why: 'LI12 es la modificación de recuento y pide el recuento #.' },
+  { q: '¿Cuál es el reporte de digitación de inventario?', ok: 'ZI03', bad: ['ZLX02', 'LI11', 'LX17'], why: 'ZI03, con tipo de almacén *.' },
+  { q: '¿Cuál mide la exactitud de stock?', ok: 'ZLX02 con variante Exactitud', bad: ['ZI03 con variante JOEL', 'LX17 con variante Exactitud', 'LX22 con tipo de almacén *'], why: 'Se corre con las listas de diferencia del día.' },
+  { q: '¿En qué inventarios se hacen Exactitud 1 y 2?', ok: 'Solo en los de AP12', bad: ['Solo en los de LE00', 'En AP12 y LE00', 'Solo los domingos'], why: 'Se hacen dos veces, solo en AP12, para confirmar los movimientos.' },
+  { q: '¿Qué haces al terminar el inventario de LE00?', ok: 'Cerrar inventario y compensar', bad: ['Exactitud 1 y 2', 'Crear una OT con LT01', 'Pedido de suministros'], why: 'En LE00: cerrar inventario / compensar.' },
+  { q: '¿Qué haces ANTES de empezar un inventario?', ok: 'Bloquear las ubicaciones y esperar a que terminen los despachos pendientes', bad: ['Correr ZLX02', 'Liberar las ubicaciones', 'Confirmar en LT12'], why: 'Y al terminar, liberas las ubicaciones.' },
+  { q: 'En ZLX02, ¿qué filtro de altura llevan 701–703 y 704–706?', ok: 'Solo ubicaciones bajas (011 y 012)', bad: ['Solo ubicaciones altas', 'Ninguno', 'Tipo de almacén 001'], why: 'Piso y altura: solo las ubicaciones bajas.' },
+  { q: 'En ZLX02, ¿qué filtro lleva 401–403?', ok: 'Ninguno de altura', bad: ['011 y 012', 'Tipo 001', 'General *'], why: 'Solo 701–703 y 704–706 llevan el filtro de altura.' },
+  { q: 'A partir del 207 en ZLX02, ¿qué filtro se coloca?', ok: 'Tipo de almacén 001 (disponible para despacho)', bad: ['Altura 011 y 012', 'Tipo 0GR', 'Ninguno'], why: '001 es disponible para despacho.' },
+  { q: 'En ZLX02, ¿cómo se corre la 707?', ok: 'General *', bad: ['Con filtro de altura', 'Con tipo 001', 'Con 011 y 012'], why: '707 va en General.' },
+  { q: '¿Qué opciones de movimiento tiene MB1A?', ok: '201 o 202', bad: ['901 o 902', '910 o 920', '999 o 001'], why: 'Dos opciones para mover: 201 o 202.' },
+  { q: 'En el movimiento 202, ¿qué tipo de almacén colocas de destino?', ok: '0GR', bad: ['001', 'E1', 'ZBR'], why: '0GR es tránsito / movimiento.' },
+  { q: '¿Qué transacción confirma un movimiento de MB1A?', ok: 'LT12', bad: ['LT01', 'LT24', 'LS06'], why: 'LT12: el # OT se coloca automático, contabilizas y guardas.' },
+  { q: '¿Qué clase de movimiento usa LT01 para crear la OT?', ok: '920', bad: ['201', '902', '910'], why: 'LT01 con clase de movimiento 920.' },
+  { q: 'Hay diferencia en un movimiento 920. ¿Qué destino colocas?', ok: '999, seguido de DIFERENCIA', bad: ['001', '902', '910'], why: 'Destino 999 seguido de DIFERENCIA.' },
+  { q: 'En movimientos de diferencia, un valor negativo en stock significa…', ok: 'Sobrantes', bad: ['Faltantes', 'Material bloqueado', 'Material en tránsito'], why: 'Los negativos en stock significan sobrantes.' },
+  { q: 'PNC: ¿qué movimiento es la entrada y cuál el despacho?', ok: 'Entrada 902, despacho 910', bad: ['Entrada 910, despacho 902', 'Entrada 920, despacho 999', 'Entrada 201, despacho 202'], why: 'Entrada con 902 y despacho con 910.' },
+  { q: '¿Qué variante usas en LT22 para negados?', ok: 'NEGADOS YAN', bad: ['JOEL', 'OSCAR', 'Exactitud'], why: 'JOEL es LX17, OSCAR es LT24 y Exactitud es ZLX02.' },
+  { q: 'Al revisar un negado, ¿contra qué revisas el stock?', ok: 'El stock completo, no una sola ubicación', bad: ['Solo la ubicación del negado', 'Solo la zona de bardas', 'Solo el stock en 001'], why: 'Un negado puede tener stock en otras ubicaciones.' },
+  { q: 'En LT22, ¿cómo confirmas un movimiento?', ok: 'Ícono del montacargas con ✓', bad: ['Con LT12 sin OT', 'Ícono de inventario', 'F5'], why: 'En rojo están las no confirmadas.' },
+  { q: '¿Qué transacción tiene la variante OSCAR?', ok: 'LT24, estudio de materiales', bad: ['LT22', 'LX17', 'ZLX02'], why: 'LT24 es por material.' },
+  { q: 'En decomiso, ¿qué haces con el documento firmado?', ok: 'Lo envías al Recibo', bad: ['Lo archivas en Seguridad', 'Lo subes a SAP sin copia', 'Lo entregas al proveedor'], why: 'Se imprimen 2 copias, lo firman y se envía al Recibo.' },
+  { q: 'Las mermas de producción en decomiso llevan…', ok: 'L3', bad: ['L1', '902', '999'], why: 'Las mermas llevan L3 y los productos fuera de producción son avería.' },
+  { q: 'En LS24, ¿qué hace el bloqueo de salida?', ok: 'Evita el despacho de esa ubicación', bad: ['Evita que entre mercancía', 'Elimina el stock', 'Cambia la fecha de caducidad'], why: 'El de entrada evita que entre mercancía.' },
+  { q: '¿Qué transacción hace el bloqueo masivo de ubicaciones?', ok: 'LS06', bad: ['LS24', 'LT01', 'LI14'], why: 'LS06: tipo de almacén, ubicación objetivo, generar y foco de candado.' },
+  { q: 'FPC significa…', ok: 'Fecha próxima caducidad', bad: ['Formato de pedido de compra', 'Foto de producto cerrado', 'Fecha de pedido confirmada'], why: 'ZI18 lista FPC por categoría.' },
+  { q: '¿Qué reporte de fechas se hace diariamente?', ok: 'El de 15 días próximos a vencer', bad: ['El de 45 días', 'El de 5 días', 'El de 30 días'], why: 'Los domingos se levanta el de 45 días.' },
+  { q: '¿Qué se hace los domingos con las fechas?', ok: 'Levantamiento de materiales a 45 días o menos de vencer', bad: ['Pedido de suministros', 'Exactitud 1 y 2', 'Confirmar movimientos'], why: 'Tu equipo revisa que todas las fechas sean iguales.' },
+  { q: '¿Qué tipos de almacén se usan en ZI18?', ok: '00A, 00R y ZBR', bad: ['001, 0GR y E1', 'E1, E2 y E3', 'AP12 y LE00'], why: 'Más el intervalo de días.' },
+  { q: '¿Qué día se hacen los pedidos de suministros?', ok: 'Los sábados', bad: ['Los lunes', 'Los domingos', 'Los viernes'], why: 'Para tener lo ideal de cada semana.' },
+  { q: 'Pedido por Pedregal 105: ¿con qué transacción?', ok: 'ME27', bad: ['ZME27', 'LT01', 'LS06'], why: 'ZME27 es para Textil 101.' },
+  { q: 'En ME27, ¿qué fecha de entrega pones?', ok: '2 días después', bad: ['El mismo día', '1 semana después', 'Fin de mes'], why: 'Con tipo de imputación K.' },
+  { q: '¿Dónde se reportan los pisos y tramerías?', ok: 'En Fractal', bad: ['En un formulario de Google', 'En LT22', 'En ZI18'], why: 'Los walkies se reportan en un formulario de Google.' },
+  { q: 'En la tramería, ¿qué soporta la carga?', ok: 'Los travesaños', bad: ['Los perfiles', 'Los largueros', 'Los walkies'], why: 'Perfiles: verticales azules. Largueros: horizontales.' },
+  { q: '¿Qué son los walkies?', ok: 'Vehículos de carga', bad: ['Radios del equipo', 'Reportes de despacho', 'Zonas de jaula'], why: 'Su reporte se hace en un formulario de Google.' },
+  { q: 'Tipo de almacenamiento 001', ok: 'Disponible para despacho', bad: ['Ubicaciones fijas', 'Tránsito / movimiento', 'Zona de bardas'], why: '001 es lo disponible para despachar.' },
+  { q: 'ZBR corresponde a…', ok: 'Zona de bardas (materiales pequeños)', bad: ['Reservas', 'Disponible para despacho', 'Ubicaciones fijas'], why: 'También se le llama zona de jaula.' },
+  { q: 'Tipo de almacén E1', ok: 'Ubicaciones sencillas, 1 paleta', bad: ['Gran reserva', 'Zona de bardas', 'Disponible para despacho'], why: 'E1 sencillas (jaula abajo). E2 gran reserva (jaula arriba).' },
+  { q: 'En la jaula (ZBR), ¿qué pasillos son de ubicación doble?', ok: '408 a 411', bad: ['404 a 407', '401 a 403', '701 a 703'], why: 'Los de 404 a 407 son sencillas.' },
+  { q: '¿Qué andenes son sencillos?', ok: '802 a 805 y 808 a 809', bad: ['801, 806, 807 y 810', 'Solo el 703', '404 a 407'], why: 'Los de doble capacidad son 801, 806, 807, 810 y 703.' },
+  { q: 'En seco, ¿cuántas paletas caben en las ubicaciones 01 a 11?', ok: '5 paletas', bad: ['1 paleta', '3 paletas', '10 paletas'], why: 'De la 12 a la 17 cabe solo una.' },
+  { q: 'En seco, las ubicaciones 12 a 17 tienen capacidad de…', ok: '1 paleta', bad: ['5 paletas', '2 paletas', '6 paletas'], why: 'Las 01 a 11 admiten 5.' },
+  { q: 'Menudeo: ¿qué capacidad tiene la ubicación 707/05?', ok: '4 a 10 cajas', bad: ['3 cajas', '6 a 7 cajas', '1 paleta'], why: '707/02 son 3 cajas y la 203 son 6–7.' },
+  { q: 'En tu cuadro de prioridades, ¿cuál es la tarea número 1?', ok: 'Inventario cíclico AP12', bad: ['Decomiso', 'Negados', 'Pedido de suministros'], why: 'La 2 es decomiso y la 3 es tratamiento PNC.' }
+];
+
+var qs = [], qi = 0, hits = 0, missed = [];
+function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+function start(list) { qs = shuffle(list); qi = 0; hits = 0; missed = []; showQ(); }
+function intro() {
+  $('quiz').innerHTML = '<h2 style="margin-top:8px">Practicar</h2><div class="card"><p style="margin:0 0 4px"><b>' + BANK.length + ' preguntas</b> de tus apuntes.</p>' +
+    '<p style="margin:0;color:var(--muted);font-size:14px">Cada respuesta trae su explicación. Al final puedes repetir solo las que fallaste.</p></div>' +
+    '<button class="btn" id="go10">Ronda de 10 al azar</button><button class="btn ghost" id="go">Empezar con todas</button>';
+  $('go').onclick = function () { start(BANK); };
+  $('go10').onclick = function () { start(shuffle(BANK).slice(0, 10)); };
+}
+function showQ() {
+  var q = qs[qi], opts = shuffle([q.ok].concat(q.bad));
+  $('quiz').innerHTML = '<div class="q-meta"><span>Pregunta ' + (qi + 1) + ' de ' + qs.length + '</span><span>' + hits + ' correctas</span></div>' +
+    '<div class="bar"><i style="width:' + (qi / qs.length * 100) + '%"></i></div>' +
+    '<p class="q-text">' + esc(q.q) + '</p><div class="opts" id="opts"></div><div id="fb"></div>';
+  var o = $('opts');
+  opts.forEach(function (t) {
+    var b = document.createElement('button'); b.className = 'opt'; b.textContent = t;
+    b.onclick = function () { answer(b, t === q.ok, q); };
+    o.appendChild(b);
+  });
+}
+function answer(btn, good, q) {
+  var all = document.querySelectorAll('#opts .opt');
+  for (var i = 0; i < all.length; i++) { all[i].disabled = true; if (all[i].textContent === q.ok) all[i].classList.add('right'); }
+  if (good) hits++; else { btn.classList.add('wrong'); missed.push(q); }
+  var last = qi === qs.length - 1;
+  $('fb').innerHTML = '<div class="why"><b class="' + (good ? 'ok' : 'no') + '">' + (good ? 'Correcto. ' : 'No era esa. ') + '</b>' + esc(q.why) + '</div><button class="btn" id="nx">' + (last ? 'Ver resultado' : 'Siguiente') + '</button>';
+  var nx = $('nx');
+  nx.onclick = function () { if (last) done(); else { qi++; showQ(); } };
+  try { nx.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {}
+}
+function done() {
+  $('quiz').innerHTML = '<h2 style="margin-top:8px">Resultado</h2><div class="card"><div class="score">' + hits + ' / ' + qs.length + '</div>' +
+    (missed.length ? '<p style="margin:0">Para repasar:</p><ul class="miss">' + missed.map(function (m) { return '<li>' + esc(m.q) + '</li>'; }).join('') + '</ul>' : '<p style="margin:0">Todas correctas.</p>') + '</div>' +
+    (missed.length ? '<button class="btn" id="rm">Repetir las falladas</button>' : '') + '<button class="btn ghost" id="ra">Volver al inicio</button>';
+  if (missed.length) $('rm').onclick = function () { start(missed.slice()); };
+  $('ra').onclick = intro;
+}
+intro();
+
+/* ============ PESTAÑAS ============ */
+var TABS = ['hoy', 'proc', 'ref', 'dudas', 'quiz'];
+function setTab(name) {
+  TABS.forEach(function (n) { $('p-' + n).hidden = n !== name; $('t-' + n).setAttribute('aria-selected', n === name ? 'true' : 'false'); });
+  window.scrollTo(0, 0);
+  lsSet('gs_tab', name);
+}
+Array.prototype.forEach.call(document.querySelectorAll('nav.tabs button'), function (b) {
+  b.addEventListener('click', function () { setTab(b.getAttribute('data-tab')); });
+});
+var savedTab = lsGet('gs_tab', 'hoy');
+if (savedTab !== 'hoy' && TABS.indexOf(savedTab) > -1) setTab(savedTab);
+</script>
+
+</body>
+</html>
